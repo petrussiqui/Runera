@@ -1,0 +1,12 @@
+
+:root{
+  --linear-primary: linear-gradient(90deg, #6C69FF 0%, #699DEC 100%),
+  --linear-secondary: linear-gradient(0deg, #6C69FF 0%, #699DEC 100%)
+}
+
+.Toastify__toast {
+  position: relative;
+  border-radius: 16px;
+  background: #222234;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
