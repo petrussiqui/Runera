@@ -8,6 +8,7 @@ import SettingsProvider from "contexts/settingsContext";
 import { render } from "react-dom";
 
 // ALL THIRD PARTY LIBRARIES CSS
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -28,8 +29,8 @@ enableMocking().then(() =>
         <App />
       </SettingsProvider>
     </React.StrictMode>,
-    document.getElementById("root")
-  )
+    document.getElementById("root"),
+  ),
 );
 
 // // https://github.com/atlassian/react-beautiful-dnd/issues/2407

@@ -204,3 +204,7 @@ export const TypographyGradient = styled(Typography)(({ theme }) => ({
   WebkitTextFillColor: "transparent",
   lineHeight: "1.3",
 }));
+
+export const TypographyPrimary = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.main,
+}));

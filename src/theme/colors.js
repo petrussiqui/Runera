@@ -24,7 +24,7 @@ export const primary = {
   700: '#4317CA',
   800: '#33129C',
   900: '#240C6E',
-  main: '#6B79F2'
+  main: '#FCE593'
 };
 export const success = {
   25: '#F1FEF5',
@@ -161,8 +161,8 @@ export const darkPalette = {
   action: actionDark,
   background: {
     default: "#191920",
-    paper: '#000000',
+    paper: '#111111',
     input: "#000000",
-    card: '#1B1B1B'
+    card: '#2B2B2B'
   }
 };

@@ -5,16 +5,16 @@ import { DashboardHeaderRoot, StyledToolBar } from "../styles";
 
 const socials = [
   {
-    icon: "telegram",
-    link: "telegram.com",
-  },
-  {
     icon: "twitter",
     link: "https://twitter.com/",
   },
   {
-    icon: "gitbook",
-    link: "https://docs.ton.org/",
+    icon: "telegram",
+    link: "telegram.com",
+  },
+  {
+    icon: "discord",
+    link: "https://discord.com/",
   },
 ];
 
@@ -30,11 +30,11 @@ export default function DashboardHeader() {
                 src='/logo.svg'
                 alt=''
                 sx={{
-                  width: "100px",
+                  width: "110px",
                 }}
               />
             </Link>
-            <Stack gap={4} direction={"row"}>
+            <Stack gap={3} direction={"row"}>
               {socials.map((item, index) => (
                 <Link
                   key={index}
@@ -44,7 +44,7 @@ export default function DashboardHeader() {
                   underline='none'>
                   <Box
                     component={"img"}
-                    src={`/images/${item.icon}.svg`}
+                    src={`/images/icon-${item.icon}.svg`}
                     alt=''
                     sx={{
                       width: "24px",

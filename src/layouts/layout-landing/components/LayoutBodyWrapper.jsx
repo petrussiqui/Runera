@@ -8,7 +8,9 @@ export default function LayoutBodyWrapper({ children }) {
   return (
     <RootBox compact={openSecondarySideBar}>
       <DashboardHeader />
-      <Container maxWidth={"lg"}>{children}</Container>
+      <Container maxWidth={"lg"} sx={{ pt: 8 }}>
+        {children}
+      </Container>
     </RootBox>
   );
 }

@@ -17,7 +17,7 @@ import '@fontsource/inter/700.css';
 const baseOptions = {
   direction: 'ltr',
   typography: {
-    fontFamily: "'Inter', sans-serif"
+    fontFamily: "'Source Code Pro', sans-serif"
   },
   breakpoints: {
     values: {

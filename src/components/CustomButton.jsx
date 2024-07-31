@@ -1,5 +1,5 @@
 import { LoadingButton } from "@mui/lab";
-import { styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
 export const ButtonLoadingPrimary = styled(LoadingButton)(({ theme }) => ({
   color: "#010102",
@@ -84,5 +84,54 @@ export const ButtonLoadingTertiary = styled(LoadingButton)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     minWidth: "100px",
+  },
+}));
+
+export const ButtonOutline = styled(Button)(({ theme }) => ({
+  background: "transparent",
+  padding: theme.spacing(1, 3),
+  borderRadius: "1rem",
+  transition: "0.5s",
+  color: theme.palette.primary.main,
+  border: `1px solid ${theme.palette.primary.main}`,
+  fontSize: "1.5rem",
+  "&:hover": {
+    background: theme.palette.background.paper,
+    transform: "translate3d(0, -4px, 0)",
+    boxShadow: theme.shadows[2],
+  },
+  "&.Mui-disabled": {
+    color: theme.palette.text.secondary,
+    border: "none",
+  },
+  [theme.breakpoints.down("sm")]: {
+    minWidth: "100px",
+    fontSize: "1rem",
+    padding: theme.spacing(0, 3),
+    height: "40px",
+  },
+}));
+export const ButtonContained = styled(Button)(({ theme }) => ({
+  background: theme.palette.primary.main,
+  padding: theme.spacing(1, 3),
+  borderRadius: "1rem",
+  transition: "0.5s",
+  color: theme.palette.background.paper,
+  fontSize: "1.5rem",
+  fontWeight: 600,
+  "&:hover": {
+    background: theme.palette.primary.main,
+    transform: "translate3d(0, -4px, 0)",
+    boxShadow: theme.shadows[2],
+  },
+  "&.Mui-disabled": {
+    color: theme.palette.text.secondary,
+    border: "none",
+  },
+  [theme.breakpoints.down("sm")]: {
+    minWidth: "100px",
+    fontSize: "1rem",
+    padding: theme.spacing(0, 3),
+    height: "40px",
   },
 }));
