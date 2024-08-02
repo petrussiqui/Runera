@@ -66,7 +66,7 @@ export const error = {
   700: '#C0113C',
   800: '#910D2D',
   900: '#63091F',
-  main: '#EF4770'
+  main: '#FF2424'
 };
 export const secondary = {
   ...grey,
@@ -82,14 +82,16 @@ export const info = {
 export const textLight = {
   primary: grey[900],
   disabled: grey[200],
-  secondary: grey[500]
+  secondary: grey[500],
+  third: '#A6A6A6',
 };
 
 // FOR DARK THEME TEXT COLORS
 export const textDark = {
   primary: '#ffffff',
   disabled: '#484C5E',
-  secondary: '#C2C2C2'
+  secondary: '#C2C2C2',
+  third: '#A6A6A6',
 };
 
 // FOR LIGHT THEME ACTION COLORS
@@ -161,7 +163,7 @@ export const darkPalette = {
   action: actionDark,
   background: {
     default: "#1B1B1B",
-    paper: '#111111',
+    paper: '#060707',
     input: "#000000",
     card: '#2B2B2B'
   }

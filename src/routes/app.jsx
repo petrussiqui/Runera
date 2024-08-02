@@ -5,6 +5,7 @@ import Ecosystem from "../pages/ecosystem";
 import Node from "../pages/node";
 import Airdrop from "../pages/airdrop";
 import Referral from "../pages/referral";
+import Testnet from "../pages/testnet";
 
 // ALL DASHBOARD PAGES
 const Homepage = Loadable(lazy(() => import("pages/homepage")));
@@ -50,6 +51,16 @@ export const AppRoutes = [
   },
   {
     path: "/testnet",
-    element: <Homepage />,
+    element: <Testnet />,
+    children: [
+      {
+        path: "faucet",
+        element: <Testnet />,
+      },
+      {
+        path: "mint-nft",
+        element: <Testnet />,
+      },
+    ],
   },
 ];

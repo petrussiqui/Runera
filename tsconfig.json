@@ -20,5 +20,5 @@
     "types": ["socket.io-client"] 
   },
   "exclude": ["node_modules", "infra"],
-  "include": ["**/*.ts", "**/*.tsx", "next.config.js", "src/components/CustomButton.jsx"]
+  "include": ["**/*.ts", "**/*.tsx", "next.config.js", "src/components/CustomButton.jsx", "src/components/flexbox/CustomBox.jsx"]
 }

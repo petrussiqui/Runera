@@ -121,17 +121,30 @@ export const ButtonContained = styled(Button)(({ theme }) => ({
   fontWeight: 600,
   "&:hover": {
     background: theme.palette.primary.main,
-    transform: "translate3d(0, -4px, 0)",
+    // transform: "translate3d(0, -4px, 0)",
     boxShadow: theme.shadows[2],
   },
   "&.Mui-disabled": {
     color: theme.palette.text.secondary,
     border: "none",
   },
+  "&.MuiButton-sizeSmall": {
+    fontSize: "1rem",
+    padding: theme.spacing(0.5, 2),
+    borderRadius: "0.4rem",
+    minHeight: 30,
+  },
   [theme.breakpoints.down("sm")]: {
     minWidth: "100px",
     fontSize: "1rem",
     padding: theme.spacing(0, 3),
     height: "40px",
+    "&.MuiButton-sizeSmall": {
+      fontSize: "1rem",
+      padding: theme.spacing(0, 2),
+      borderRadius: "0.4rem",
+      height: 30,
+      minWidth: "64px",
+    },
   },
 }));
