@@ -27,7 +27,7 @@ export default function Faucet() {
           }}>
           <Stack gap={2}>
             <FlexRow gap={1}>
-              <Box component={"img"} src={"/images/runes.svg"} width={52} />
+              <Box component={"img"} src={"/images/RUNES.svg"} width={52} />
               <Box>
                 <Typography fontWeight={600} variant='h6'>
                   Runes Chain faucet

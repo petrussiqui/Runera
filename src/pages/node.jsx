@@ -1,34 +1,74 @@
-import { Box, Fade, Stack } from "@mui/material";
-import Intro from "../page-sections/homepage/Intro";
-import Value from "../page-sections/homepage/Value";
-import Features from "../page-sections/homepage/Features";
-import RuneraSlide from "../page-sections/homepage/RuneraSlide";
-import Partner from "../page-sections/homepage/Partner";
-import Join from "../page-sections/homepage/Join";
-import RoadMap from "../page-sections/homepage/RoadMap";
+import { Box, Fade, Stack, Typography, useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Emble from "../page-sections/node/Emble";
+import NodeOverview from "../page-sections/node/NodeOverview";
+
+const tabsListConfig = [
+  {
+    label: "Node",
+    value: "OVERVIEW",
+    component: <NodeOverview />,
+  },
+  {
+    label: "Emble",
+    value: "EMBLE",
+    component: <Emble />,
+  },
+];
 
 export default function Node() {
+  const theme = useTheme();
+  const navigate = useNavigate();
+  const path = useLocation().pathname;
+  const [tabIndex, setTabIndex] = useState("OVERVIEW");
+
+  useEffect(() => {
+    switch (path) {
+      case "/node/overview":
+        setTabIndex("OVERVIEW");
+        break;
+      case "/node/emble":
+        setTabIndex("EMBLE");
+        break;
+      default:
+        setTabIndex("OVERVIEW");
+    }
+  }, [path]);
+
   return (
     <Fade in={true}>
       <Stack gap={5} pb={10}>
-        <Intro />
-        <Box height={72} my={10}>
-          <Box
-            sx={{
-              position: "absolute",
-              backgroundColor: "#2B2B2B",
-              width: "100%",
-              height: "72px",
-              left: "0px",
-            }}
-          />
-        </Box>
-        <Features />
-        <Value />
-        <RoadMap />
-        <RuneraSlide />
-        <Partner />
-        <Join />
+        <Stack gap={2} direction={"row"} justifyContent={"center"}>
+          {tabsListConfig.map((item, index) => (
+            <Box
+              key={index}
+              onClick={() => navigate(`/node/${item.value.toLowerCase()}`)}
+              className={tabIndex === item.value ? "active" : ""}
+              sx={{
+                width: 80,
+                cursor: "pointer",
+                padding: "0.5rem 1rem",
+
+                backgroundColor: theme.palette.background.card,
+                "&:hover, &.active": {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}>
+              <Typography
+                textAlign={"center"}
+                color={
+                  tabIndex === item.value
+                    ? theme.palette.primary[900]
+                    : "text.primary"
+                }>
+                {item.label}
+              </Typography>
+            </Box>
+          ))}
+        </Stack>
+        {tabIndex &&
+          tabsListConfig.filter((item) => item.value === tabIndex)[0].component}
       </Stack>
     </Fade>
   );

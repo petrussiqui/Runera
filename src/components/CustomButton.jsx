@@ -111,6 +111,7 @@ export const ButtonOutline = styled(Button)(({ theme }) => ({
     height: "40px",
   },
 }));
+
 export const ButtonContained = styled(Button)(({ theme }) => ({
   background: theme.palette.primary.main,
   padding: theme.spacing(1, 3),

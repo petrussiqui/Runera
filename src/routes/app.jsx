@@ -6,6 +6,7 @@ import Node from "../pages/node";
 import Airdrop from "../pages/airdrop";
 import Referral from "../pages/referral";
 import Testnet from "../pages/testnet";
+import Bridge from "../pages/bridge";
 
 // ALL DASHBOARD PAGES
 const Homepage = Loadable(lazy(() => import("pages/homepage")));
@@ -21,21 +22,31 @@ export const AppRoutes = [
     children: [
       {
         path: "bitcoin",
-        element: <Node />,
+        element: <Ecosystem />,
       },
       {
         path: "ai",
-        element: <Node />,
+        element: <Ecosystem />,
       },
       {
         path: "game",
-        element: <Node />,
+        element: <Ecosystem />,
       },
     ],
   },
   {
     path: "/node",
     element: <Node />,
+    children: [
+      {
+        path: "overview",
+        element: <Node />,
+      },
+      {
+        path: "emble",
+        element: <Node />,
+      },
+    ],
   },
   {
     path: "/airdrop",
@@ -48,6 +59,10 @@ export const AppRoutes = [
   {
     path: "/docs",
     element: <Homepage />,
+  },
+  {
+    path: "/bridge",
+    element: <Bridge />,
   },
   {
     path: "/testnet",
