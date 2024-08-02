@@ -1,28 +1,24 @@
-import { useCallback, useEffect, useState, createContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { navigation } from './navigation';
+import { useCallback, useEffect, useState, createContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { navigation } from "./navigation";
 
 export const LayoutContext = createContext({});
-export default function LayoutProvider({
-  children
-}) {
+export default function LayoutProvider({ children }) {
   const navigate = useNavigate();
-  const {
-    pathname
-  } = useLocation();
+  const { pathname } = useLocation();
   const [active, setActive] = useState(navigation[0].name);
   const [showMobileSideBar, setShowMobileSideBar] = useState(false);
-  const downMd = useMediaQuery(theme => theme.breakpoints.down(1200));
+  const downMd = useMediaQuery((theme) => theme.breakpoints.down(1024));
   const handleCloseMobileSidebar = () => setShowMobileSideBar(false);
 
-  const handleActiveMainMenu = menuItem => () => {
+  const handleActiveMainMenu = (menuItem) => () => {
     navigate(menuItem.path);
     setActive(menuItem.name);
   };
 
   const activeRoute = useCallback(() => {
-    navigation.forEach(menu => {
+    navigation.forEach((menu) => {
       if (menu.path === pathname) {
         setActive(menu.name);
       }
@@ -35,13 +31,16 @@ export default function LayoutProvider({
     activeRoute();
   }, [activeRoute]);
 
-  return <LayoutContext.Provider value={{
-    active,
-    downMd,
-    showMobileSideBar,
-    handleActiveMainMenu,
-    handleCloseMobileSidebar,
-  }}>
-    {children}
-  </LayoutContext.Provider>;
+  return (
+    <LayoutContext.Provider
+      value={{
+        active,
+        downMd,
+        showMobileSideBar,
+        handleActiveMainMenu,
+        handleCloseMobileSidebar,
+      }}>
+      {children}
+    </LayoutContext.Provider>
+  );
 }

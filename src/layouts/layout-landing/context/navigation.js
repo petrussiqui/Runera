@@ -1,28 +1,74 @@
-// CUSTOM ICON COMPONENT
-import { t } from 'i18next';
-import HistoryIcon from 'icons/HistoryIcon';
-import HomeIcon from 'icons/HomeIcon';
-import QuestIcon from 'icons/QuestIcon';
-import ReferralIcon from 'icons/ReferralIcon';
+
 export const navigation = [
   {
     name: 'Home',
-    Icon: <HomeIcon size={18} />,
-    path: ''
+    path: '',
+    externalLink: false
   },
   {
-    name: 'Quest',
-    Icon: <QuestIcon size={18} />,
-    path: '/quest'
+    name: 'Ecosystem',
+    path: '/ecosystem',
+    externalLink: false,
+    children: [
+      {
+        name: 'Ecosystem 1',
+        path: '/ecosystem/ecosystem-1',
+        externalLink: false
+      },
+      {
+        name: 'Ecosystem 2',
+        path: '/ecosystem/ecosystem-2',
+        externalLink: false
+      }
+    ]
+  },
+  {
+    name: 'Node',
+    path: '/node',
+    externalLink: false,
+    children: [
+      {
+        name: 'Node 1',
+        path: '/node/node-1',
+        externalLink: false
+      },
+      {
+        name: 'Node 2',
+        path: '/node/node-2',
+        externalLink: false
+      }
+    ]
+  },
+  {
+    name: 'Airdrop',
+    path: '/airdrop',
+    externalLink: false
   },
   {
     name: 'Referral',
-    Icon: <ReferralIcon size={18} />,
-    path: '/referral'
+    path: '/referral',
+    externalLink: false
   },
   {
-    name: 'History',
-    Icon: <HistoryIcon size={18} />,
-    path: '/history'
+    name: 'Docs',
+    path: '/docs',
+    externalLink: false
+  },
+  {
+    name: 'Testnet',
+    path: '/testnet',
+    externalLink: false,
+    children: [
+      {
+        name: 'Testnet 1',
+        path: '/testnet/testnet-1',
+        externalLink: false
+      },
+      {
+        name: 'Testnet 2',
+        path: '/testnet/testnet-2',
+        externalLink: false
+      }
+    ]
   },
 ];

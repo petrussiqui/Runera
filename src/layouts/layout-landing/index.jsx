@@ -13,7 +13,7 @@ export default function LayoutLanding({ children }) {
     if (settings?.token !== temp && !!temp && temp?.length > 0) {
       saveSettings({ ...settings, token: temp });
     }
-  }, [settings]);
+  }, [settings, saveSettings, searchParams]);
 
   return (
     <LayoutProvider>

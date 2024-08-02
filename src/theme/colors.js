@@ -23,7 +23,7 @@ export const primary = {
   600: '#4fa5e2',
   700: '#4317CA',
   800: '#33129C',
-  900: '#240C6E',
+  900: '#F4BB44',
   main: '#FCE593'
 };
 export const success = {
@@ -89,7 +89,7 @@ export const textLight = {
 export const textDark = {
   primary: '#ffffff',
   disabled: '#484C5E',
-  secondary: '#FFFFFF90'
+  secondary: '#C2C2C2'
 };
 
 // FOR LIGHT THEME ACTION COLORS
@@ -160,7 +160,7 @@ export const darkPalette = {
   divider: '#242424',
   action: actionDark,
   background: {
-    default: "#191920",
+    default: "#1B1B1B",
     paper: '#111111',
     input: "#000000",
     card: '#2B2B2B'
