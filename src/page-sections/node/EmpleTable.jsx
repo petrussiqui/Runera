@@ -126,7 +126,7 @@ export default function EmpleTable() {
             },
             "& .MuiDataGrid-columnHeader": {
               color: theme.palette.text.secondary,
-              background: "#1D1D1D",
+              // background: "#1D1D1D",
               height: "45px !important",
               // borderRadius: "0.5rem!important",
             },
